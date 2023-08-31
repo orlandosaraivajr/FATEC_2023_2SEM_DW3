@@ -1,0 +1,16 @@
+No prompt de comando (CMD), no diretório do projeto, digite:
+
+  # virtualenv -p python3 venv
+
+ou 
+  # python -m venv venv
+
+Sendo venv o nome do seu ambiente
+
+2) Agora precisamos ativar o ambiente:
+
+  # cd venv
+  # cd Script
+  # activate.bat
+
+Ao executar o script activate.bat ( do diretório Script), seu ambiente virtual estará ativado.
