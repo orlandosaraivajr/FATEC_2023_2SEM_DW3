@@ -1,7 +1,13 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+from .models import FeriadoModel
+from datetime import date
 
-def natal(request):
-    return HttpResponse("<h1><center>Não é natal.</center></h1>")
 
-def independencia(request):
-    return HttpResponse("Independência ou morte")
+def feriado(request):
+    hoje = date.today()
+    feriados = FeriadoModel.objects.filter(dia=hoje.day).filter(mes=hoje.month)
+    if len(feriados) > 0:
+        contexto = {'feriado':True, 'nome':feriados[0].nome}
+    else:
+        contexto = {'feriado':False}
+    return render(request, 'feriado.html',contexto)
