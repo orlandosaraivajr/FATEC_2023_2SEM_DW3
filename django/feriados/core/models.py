@@ -8,3 +8,8 @@ class FeriadoModel(models.Model):
 
     def __str__(self):
         return self.nome
+
+    class Meta:
+        verbose_name_plural = 'Feriados'
+        verbose_name = 'Feriado'
+        ordering = ('mes','-dia')
